@@ -12,7 +12,7 @@ import CreateTicket from './components/Tickets/CreateTicket';
 function App() {
   return (
     <AuthProvider>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-slate-950 text-slate-100">
         <Navbar />
         <div className="max-w-7xl mx-auto">
           <Routes>

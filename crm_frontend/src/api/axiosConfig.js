@@ -63,11 +63,16 @@ axiosInstance.interceptors.response.use(
 
 // Auth APIs
 export const authAPI = {
-  login: (credentials) => axiosInstance.post('/login/', credentials),
-  register: (userData) => axiosInstance.post('/register/', userData),
-  logout: () => {
-    localStorage.clear();
-  },
+  login: (credentials) =>
+    axiosInstance.post('/accounts/login/', credentials),
+
+  register: (userData) =>
+    axiosInstance.post('/accounts/register/', userData),
+
+  logout: (refreshToken) =>
+    axiosInstance.post('/accounts/logout/', {
+      refresh: refreshToken,
+    }),
 };
 
 // Ticket APIs

@@ -34,21 +34,23 @@ class Ticket(BaseModel):
         related_name="assigned_tickets"
     )
     
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, db_index=True)
     
     discription = models.TextField()
     
     priority = models.CharField(
         max_length=20,
         choices=PRIORITY_CHOICES,
-        default="medium"
+        default="medium",
+        db_index=True
     )
     
     
     status = models.CharField(
         max_length=20,
         choices=STATUS_CHOICES,
-        default="open"
+        default="open",
+        db_index=True
     )
     
     def __str__(self):

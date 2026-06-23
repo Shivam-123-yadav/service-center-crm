@@ -10,6 +10,12 @@ from rest_framework.filters import (
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import BasePermission
 
+
+from .permissions import ti
+
+
+
+
 class TicketListCreateAPIView(
     generics.ListCreateAPIView
 ):
@@ -49,6 +55,7 @@ class TicketRetrieveUpdateDestroyAPIView(
     
     
 class TicketViewSet(ModelViewSet):
+    
     
     serializer_class = TicketSerializer
     
